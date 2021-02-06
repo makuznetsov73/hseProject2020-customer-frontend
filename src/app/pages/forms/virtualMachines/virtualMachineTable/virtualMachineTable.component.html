@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-12">
+        <nb-card class="inline-form-card">
+            <nb-card-header>Your virtual machines</nb-card-header>
+            <nb-card-body>
+                <P *ngIf="ifDataEmpty()">
+                    You have no virtual machines. Create new machine?
+                </P>
+                <p>
+                    <button nbButton status="primary" [fullWidth]="true" (click)="createNew($event)">
+                        Create new virtual machine
+                    </button>
+                </p>
+                <div *ngIf="!ifDataEmpty()">
+                    <table width="100%" style="text-align: center">
+                        <thead>
+                        <tr>
+                            <th width="25%">Id</th>
+                            <th>Username</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <p></p>
+                        <tbody>
+                        <tr *ngFor="let vm of data; index as i;">
+                            <th><a (click)="getSingle($event, vm.id)">{{vm.id}}</a></th>
+                            <th>{{vm.username}}</th>
+                            <th *ngIf="vm.on">On</th>
+                            <th *ngIf="!vm.on">Off</th>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>

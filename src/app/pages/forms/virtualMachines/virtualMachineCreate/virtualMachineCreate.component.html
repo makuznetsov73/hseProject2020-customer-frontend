@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-md-12">
+        <nb-card class="inline-form-card">
+            <nb-card-header>Creating virtual machine</nb-card-header>
+            <nb-card-body>
+                Name of the virtual machine
+                <input type="text" nbInput fullWidth placeholder="Name" [(ngModel)]="data.name" required="required">
+                <p></p>
+                Resource group name
+                <input type="text" nbInput fullWidth placeholder="Resource group" [(ngModel)]="data.groupName" required="required">
+                <p></p>
+                Login
+                <input type="text" nbInput fullWidth placeholder="Login" [(ngModel)]="data.login" required="required">
+                <p></p>
+                Password
+                <input type="text" nbInput fullWidth placeholder="Password" [(ngModel)]="data.password" required="required">
+                <p></p>
+                Size type
+                <nb-select placeholder="Virtual machine size" [(selected)]="data.size">
+                    <nb-option *ngFor="let size of sizeTypes" [value]="size">
+                        {{ size }}
+                    </nb-option>
+                </nb-select>
+                <p></p>
+                Operational system
+                <nb-select placeholder="Operational system" [(selected)]="data.sku">
+                    <nb-option *ngFor="let sku of skuTypes" [value]="sku">
+                        {{ sku }}
+                    </nb-option>
+                </nb-select>
+                <p></p>
+                <h6 class="text-warning">This operation takes up to 5 minutes</h6>
+                <button nbButton fullWidth status="primary" (click)="createNew()">Create virtual machine</button>
+                <p *ngIf="error" class="danger">{{creatingError}}</p>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>

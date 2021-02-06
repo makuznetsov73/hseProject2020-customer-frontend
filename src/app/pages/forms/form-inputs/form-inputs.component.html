@@ -17,6 +17,20 @@
         <input type="text" nbInput fullWidth fieldSize="small"  placeholder="Small Input">
         <input type="text" nbInput fullWidth fieldSize="medium"  placeholder="Medium Input">
         <input type="text" nbInput fullWidth fieldSize="large"  placeholder="Large Input">
+        <table width="100%" style="text-align: center">
+          <thead>
+          <tr>
+            <th width="25%">Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Tariff type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let tariff of data; index as i;">
+          </tr>
+          </tbody>
+        </table>
       </nb-card-body>
     </nb-card>
   </div>

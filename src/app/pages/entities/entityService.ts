@@ -26,12 +26,4 @@ export class EntityService<E, P> {
     getAllPrev(page: number): Observable<RequestResponse<EntitiesPage<Array<P>>>> {
         return this.http.get<RequestResponse<EntitiesPage<Array<P>>>>(`${this.urlPath}/all/prev?page=${page}`);
     }
-
-    createEntity(entity: E): Observable<RequestResponse<P>> {
-        return this.http.post<RequestResponse<P>>(`${this.urlPath}/create/`, entity);
-    }
-
-    changeEntity(entity: E): Observable<RequestResponse<E>> {
-        return this.http.post<RequestResponse<E>>(`${this.urlPath}/change/`, entity);
-    }
 }

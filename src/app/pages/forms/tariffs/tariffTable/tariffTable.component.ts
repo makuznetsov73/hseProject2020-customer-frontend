@@ -22,7 +22,7 @@ export class TariffTableComponent {
 
     public constructor(http: HttpClient, private router: Router) {
         this.http = http;
-        this.service = new TariffService(http, `${Configuration.backHost}/admin/tariff`);
+        this.service = new TariffService(http, `${Configuration.backHost}/user/tariff`);
         this.service.getAllPrev(this.pageNumber).subscribe(data => {
             this.data = data.data.entities;
             this.pageNumber = data.data.pageNumber;

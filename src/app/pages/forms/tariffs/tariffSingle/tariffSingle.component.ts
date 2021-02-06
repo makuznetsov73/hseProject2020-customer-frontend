@@ -35,7 +35,7 @@ export class TariffSingleComponent {
     }
 
     public saveChanges() {
-        if (this.entity.type === TariffType.PER_TIME) {
+        /*if (this.entity.type === TariffType.PER_TIME) {
             if (this.entity.timeAvailableDay > 0 && this.entity.price > 0) {
                 this.entity.changeTime = null;
                 this.entity.creationTime = null;
@@ -57,6 +57,6 @@ export class TariffSingleComponent {
                     }
                 });
             }
-        }
+        }*/
     }
 }

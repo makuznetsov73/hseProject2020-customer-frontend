@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-md-6">
+        <nb-card>
+            <nb-card-header>Profile info</nb-card-header>
+            <nb-card-body>
+                Username
+                <h6>{{data.id}}</h6>
+                <p></p>
+                Password
+                <input type="text" nbInput fullWidth placeholder="Password" [(ngModel)]="data.password">
+                <p></p>
+                Email
+                <input type="text" nbInput fullWidth placeholder="Email" [(ngModel)]="data.email">
+                <p></p>
+                Phone number
+                <input type="text" nbInput fullWidth placeholder="Phone number" [(ngModel)]="data.phoneNumber">
+                <p></p>
+                Name
+                <input type="text" nbInput fullWidth placeholder="Name" [(ngModel)]="data.name">
+                <p></p>
+                Balance
+                <input type="text" nbInput fullWidth placeholder="Balance" [(ngModel)]="data.balance">
+                <p></p>
+                <button nbButton status="primary" [fullWidth]="true" (click)="saveCustomer($event)">
+                    Save changes
+                </button>
+            </nb-card-body>
+        </nb-card>
+    </div>
+    <div class="col-md-6">
+        <nb-card class="inline-form-card">
+            <nb-card-header>List of virtual machines</nb-card-header>
+            <nb-card-body>
+                <tbody>
+                <tr *ngFor="let vm of data.machineIds; index as i;">
+                    <th><a (click)="navigateToVM(vmId)">{{vmId}}</a></th>
+                </tr>
+                </tbody>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>

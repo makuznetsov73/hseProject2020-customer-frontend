@@ -1,13 +1,17 @@
 import {TariffState} from './tariffState';
 
+export class CustomerAuth {
+    username: string;
+    password: string;
+}
+
 export class CustomerPreview {
     id: string;
     login: string;
     balance: number;
-    tariffId: string;
 }
 
-export class Customer {
+export class TariffCustomer {
     id: string;
     login: string;
     balance: number;
@@ -21,4 +25,18 @@ export class Customer {
     creationTime: Date;
     changeTime: Date;
     newTariff: boolean;
+}
+
+export class Customer {
+    id: string;
+    login: string;
+    name: string;
+    balance: number;
+    email: string;
+    password: string;
+    phoneNumber: string;
+    blocked: boolean;
+    machineIds: string[];
+    creationTime: Date;
+    changeTime: Date;
 }

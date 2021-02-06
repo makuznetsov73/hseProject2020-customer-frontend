@@ -50,4 +50,8 @@ export class UserService extends UserData {
   getRecentUsers(): Observable<RecentUsers[]> {
     return observableOf(this.recentUsers);
   }
+
+  getCurrentUser(): Observable<any> {
+    return observableOf(localStorage.getItem('username'));
+  }
 }

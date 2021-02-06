@@ -4,7 +4,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Home',
     icon: 'home-outline',
-    link: '/pages/dashboard',
+    link: '/pages/forms/home',
     home: true,
   },
   {
@@ -12,20 +12,16 @@ export const MENU_ITEMS: NbMenuItem[] = [
     group: true,
   },
   {
-    title: 'Forms',
+    title: 'System',
     icon: 'edit-2-outline',
     children: [
       {
-        title: 'Form Inputs',
-        link: '/pages/forms/inputs',
+        title: 'Virtual machines',
+        link: '/pages/forms/virtualMachine',
       },
       {
-        title: 'Form Layouts',
-        link: '/pages/forms/layouts',
-      },
-      {
-        title: 'Buttons',
-        link: '/pages/forms/buttons',
+        title: 'Create new',
+        link: '/pages/forms/virtualMachine/new'
       },
     ],
   },
@@ -35,11 +31,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'Login',
-        link: '/auth/login',
+        link: '/pages/forms/login',
       },
       {
         title: 'Register',
-        link: '/auth/register',
+        link: '/pages/forms/register',
       },
     ],
   },

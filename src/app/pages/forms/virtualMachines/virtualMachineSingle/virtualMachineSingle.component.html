@@ -1,0 +1,65 @@
+<div class="row">
+    <div class="col-md-6">
+        <nb-card *ngIf="!error" class="inline-form-card">
+            <nb-card-header>Virtual machine general info</nb-card-header>
+            <nb-card-body>
+                Name
+                <h6>{{data.name}}</h6>
+                <p></p>
+                Resource group name
+                <h6>{{data.groupName}}</h6>
+                <p></p>
+                Login
+                <h6>{{data.login}}</h6>
+                <p></p>
+                Password
+                <h6>{{data.password}}</h6>
+                <p></p>
+                Ip address
+                <h6>{{data.ipAddress}}</h6>
+                <p></p>
+                Status
+                <h6 *ngIf="data.on && !data.blocked" class="text-success">On</h6>
+                <h6 *ngIf="!data.on && !data.blocked" class="text-danger">Off</h6>
+                <h6 *ngIf="data.blocked" class="text-warning">Blocked</h6>
+                <p></p>
+                OS
+                <h6>{{data.sku}}</h6>
+                <p></p>
+                Size model
+                <h6>{{data.size}}</h6>
+                <p></p>
+                Price
+                <h6>{{data.price}}</h6>
+                <p></p>
+                Subscription period ends
+                <h6>{{data.endTime}}</h6>
+                <p></p>
+            </nb-card-body>
+        </nb-card>
+    </div>
+    <div class="col-md-6">
+        <nb-card *ngIf="!error" class="inline-form-card">
+            <nb-card-header>Tools</nb-card-header>
+            <nb-card-body>
+                <h6 class="text-warning">This operations take up to 5 minutes</h6>
+                <p>
+
+                </p>
+                <button *ngIf="data.on" nbButton fullWidth status="danger" (click)="pauseVM()">Turn off vm</button>
+                <button *ngIf="!data.on" nbButton fullWidth status="success" (click)="pauseVM()">Turn on vm</button>
+                <p class="text-danger">{{turnOnOffError}}</p>
+                <p></p>
+                <p></p>
+                <h6 class="text-warning">It is an irreversible operation!</h6>
+                <button nbButton fullWidth status="danger" (click)="deleteVM()">Delete vm</button>
+                <p class="text-danger">{{deletingError}}</p>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>
+<div>
+    <nb-card *ngIf="error" class="inline-form-card">
+        <h6>Cannot find this virtual machine</h6>
+    </nb-card>
+</div>
